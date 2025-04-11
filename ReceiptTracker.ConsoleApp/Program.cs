@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ReceiptTracker.ConsoleApp.Models;
 using ReceiptTracker.ConsoleApp.Services;
 
-ReceiptServiceProxy receiptService = new ReceiptServiceProxy();
+ReceiptServiceProxy receiptService = new ReceiptServiceProxy(); //remember always create isntance of service
 
 int check = 0;
 while (check == 0)
@@ -26,14 +26,14 @@ while (check == 0)
         Console.WriteLine("Enter Receipt Description");
         string description = Console.ReadLine();
 
-        Receipt newReceipt = new Receipt
+        Receipt newReceipt = new Receipt //creation of new receipt object 
         {
             Date = date,
             Amount = amount,
             Description = description
         };
 
-        receiptService.AddReceipt(newReceipt);
+        receiptService.AddReceipt(newReceipt); //use service object to call add function
     }
     else if (choice == 2)
     {
