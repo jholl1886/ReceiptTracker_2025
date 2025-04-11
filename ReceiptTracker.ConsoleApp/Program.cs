@@ -17,15 +17,34 @@ while (check == 0)
     int choice = Convert.ToInt32(Console.ReadLine());
     if (choice == 1)
     {
-        Console.WriteLine("Enter Receipt date");
+        Console.WriteLine("Enter Receipt date (MM/DD/YYYY):");
+        DateTime date = Convert.ToDateTime(Console.ReadLine());
 
         Console.WriteLine("Enter Receipt amount");
+        decimal amount = Convert.ToDecimal(Console.ReadLine());
 
         Console.WriteLine("Enter Receipt Description");
+        string description = Console.ReadLine();
+
+        Receipt newReceipt = new Receipt
+        {
+            Date = date,
+            Amount = amount,
+            Description = description
+        };
+
+        receiptService.AddReceipt(newReceipt);
     }
     else if (choice == 2)
     {
-
+        var allReceipts = receiptService.GetAllReceipts();
+        foreach (var receipt in allReceipts)
+        {
+            Console.WriteLine($"Date: {receipt.Date.ToShortDateString()}");
+            Console.WriteLine($"Amount: ${receipt.Amount}");
+            Console.WriteLine($"Description: {receipt.Description}");
+            Console.WriteLine("------------------------");
+        }
     }
     else
     {
