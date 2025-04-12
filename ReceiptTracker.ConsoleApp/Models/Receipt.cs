@@ -16,6 +16,8 @@ namespace ReceiptTracker.ConsoleApp.Models
 
         public string Description { get; set; }
 
+        public string? FileName { get; set; }
+
 
     }
 }
