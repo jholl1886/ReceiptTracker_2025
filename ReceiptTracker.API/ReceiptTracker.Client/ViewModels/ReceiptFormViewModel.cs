@@ -58,7 +58,7 @@ namespace ReceiptTracker.Client.ViewModels
             }
         }
 
-        public void resetform()
+        public void resetform() // just always add one of these in the future to viewmodels that are forms
         {
             Receipt.Amount = 0;
             Receipt.Description = null;
