@@ -1,0 +1,76 @@
+﻿@page "/receipts/add"
+@using ReceiptTracker.Client.ViewModels
+@using System.ComponentModel.DataAnnotations
+@inject ReceiptFormViewModel ViewModel
+@inject NavigationManager NavigationManager
+
+<PageTitle>Add Receipt</PageTitle>
+
+<h1>Add Receipt</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <EditForm Model="@ViewModel.Receipt" OnValidSubmit="HandleSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            @if (ViewModel.ErrorMessage != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewModel.ErrorMessage
+                </div>
+            }
+
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <InputDate id="date" class="form-control" @bind-Value="ViewModel.Receipt.Date" />
+                <ValidationMessage For="@(() => ViewModel.Receipt.Date)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+                <InputNumber id="amount" class="form-control" @bind-Value="ViewModel.Receipt.Amount" />
+                <ValidationMessage For="@(() => ViewModel.Receipt.Amount)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <InputTextArea id="description" class="form-control" @bind-Value="ViewModel.Receipt.Description" rows="3" />
+                <ValidationMessage For="@(() => ViewModel.Receipt.Description)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="receiptFile" class="form-label">Receipt File</label>
+                <InputFile id="receiptFile" OnChange="OnFileSelected" class="form-control" accept=".jpg,.jpeg,.png,.pdf" />
+                <small class="form-text text-muted">Upload a receipt image or PDF (max 10MB)</small>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" disabled="@ViewModel.IsSubmitting">
+                    @if (ViewModel.IsSubmitting)
+                    {
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span>Submitting...</span>
+                    }
+                    else
+                    {
+                        <span>Submit</span>
+                    }
+                </button>
+                <a href="/receipts" class="btn btn-secondary">Cancel</a>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private async Task HandleSubmit()
+    {
+        await ViewModel.SubmitReceiptAsync();
+    }
+
+    private void OnFileSelected(InputFileChangeEventArgs e)
+    {
+        ViewModel.SetFile(e.File);
+    }
+}
