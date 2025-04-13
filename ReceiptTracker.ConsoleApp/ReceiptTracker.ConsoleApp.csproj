@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ReceiptTracker.API\ReceiptTracker.Shared\ReceiptTracker.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
