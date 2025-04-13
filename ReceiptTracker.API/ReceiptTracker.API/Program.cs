@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ReceiptTracker.API.Data;
-//using ReceiptTracker.API.Services; will beed to add later
+using ReceiptTracker.API.Services; 
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))); //SQLite should be configured now
 
-//builder.Services.AddScoped<IReceiptService, ReceiptService>();
+builder.Services.AddScoped<IReceiptService, ReceiptService>();
 
 builder.Services.AddCors(options =>
 {

@@ -19,6 +19,10 @@ namespace ReceiptTracker.Shared.DTO
 
         public string? FileName { get; set; }
 
+        public byte[]? FileData { get; set; }
+
+        public string? FileContentType { get; set; }
+
         public ReceiptDTO(Receipt r) 
         {   
             Id = r.Id;
@@ -26,6 +30,8 @@ namespace ReceiptTracker.Shared.DTO
             Amount = r.Amount;
             Description = r.Description;
             FileName = r.FileName;
+            FileContentType = r.FileContentType;
+            FileData = r.FileData;
         }
 
         public ReceiptDTO(ReceiptDTO r)
@@ -35,6 +41,8 @@ namespace ReceiptTracker.Shared.DTO
             Amount = r.Amount;
             Description = r.Description;
             FileName = r.FileName;
+            FileContentType = r.FileContentType;
+            FileData = r.FileData;
         }
 
         public ReceiptDTO() { }

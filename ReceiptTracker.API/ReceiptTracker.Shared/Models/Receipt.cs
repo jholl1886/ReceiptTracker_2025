@@ -19,6 +19,10 @@ namespace ReceiptTracker.Shared.Models
 
         public string? FileName { get; set; }
 
+        public byte[]? FileData { get; set; }
+
+        public string? FileContentType { get; set; }
+
         public Receipt (Receipt r)
         {
             Id = r.Id;
@@ -26,6 +30,9 @@ namespace ReceiptTracker.Shared.Models
             Amount = r.Amount;
             Description = r.Description;
             FileName = r.FileName;
+            FileContentType = r.FileContentType;
+            FileData = r.FileData;
+            FileContentType= r.FileContentType;
         }
 
         public Receipt (ReceiptDTO d)
@@ -33,8 +40,10 @@ namespace ReceiptTracker.Shared.Models
             Id = d.Id;
             Date = d.Date;
             Amount = d.Amount;
-            d.Description = d.Description;
+            Description = d.Description;
             FileName = d.FileName;
+            FileContentType = d.FileContentType;
+            FileData = d.FileData;
         }
 
         public Receipt() { }
