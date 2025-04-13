@@ -1,18 +1,36 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<!-- I currently plan on using sqlite for this cause its easier-->
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
+		<!-- usefulf for database operations-->
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ReceiptTracker.Client\ReceiptTracker.Client.csproj" />
-    <ProjectReference Include="..\ReceiptTracker.Shared\ReceiptTracker.Shared.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<!-- apparently have to add these because these are the two solutions/projects the server has to use-->
+		<ProjectReference Include="..\ReceiptTracker.Client\ReceiptTracker.Client.csproj" />
+		<ProjectReference Include="..\ReceiptTracker.Shared\ReceiptTracker.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- need this later for the ability to upload the receipt pictures-->
+		<Folder Include="Uploads\" />
+	</ItemGroup>
 
 </Project>
