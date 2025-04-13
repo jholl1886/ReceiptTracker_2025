@@ -12,7 +12,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7147") });
 
 // Register Services
-//builder.Services.AddScoped<IReceiptService, ReceiptService>();
+builder.Services.AddScoped<IReceiptService, ReceiptService>();
 
 // Register ViewModels
 builder.Services.AddScoped<ReceiptListViewModel>();
