@@ -4,6 +4,7 @@ using ReceiptTracker.Client;
 using ReceiptTracker.Client.Services;
 using ReceiptTracker.Client.ViewModels;
 
+//register your service files then whatever viewmodels you have in the program.cs file in client solution
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");

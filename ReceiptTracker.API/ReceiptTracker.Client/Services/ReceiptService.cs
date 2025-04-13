@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 
 namespace ReceiptTracker.Client.Services
 {
+    //all this stuff is borderline just the same as my ecommerce project but different names obv
     public class ReceiptService : IReceiptService
     {
         private readonly HttpClient _httpClient;
@@ -37,7 +38,7 @@ namespace ReceiptTracker.Client.Services
             // Add file if provided
             if (file != null)
             {
-                var fileContent = new StreamContent(file.OpenReadStream(maxAllowedSize: 10485760)); // 10MB max
+                var fileContent = new StreamContent(file.OpenReadStream(maxAllowedSize: 10485760)); // 10MB max dont need someone uploading omega large files
                 content.Add(fileContent, "file", file.Name);
             }
 
