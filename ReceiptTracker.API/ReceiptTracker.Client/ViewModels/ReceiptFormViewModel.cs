@@ -41,6 +41,9 @@ namespace ReceiptTracker.Client.ViewModels
                 {
                     IsSuccess = true;
                     // Navigate back to the receipts list
+
+                    resetform(); // just needed to add the reset here 
+
                     _navigationManager.NavigateTo("/receipts");
                 }
             }
@@ -54,5 +57,17 @@ namespace ReceiptTracker.Client.ViewModels
                 IsSubmitting = false;
             }
         }
+
+        public void resetform()
+        {
+            Receipt.Amount = 0;
+            Receipt.Description = null;
+            Receipt.Date = DateTime.Today;
+            SelectedFile = null;
+            ErrorMessage = null;
+            IsSubmitting = false;
+            IsSuccess = false;
+        }
+
     }
 }
