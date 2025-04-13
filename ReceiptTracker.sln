@@ -5,6 +5,12 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiptTracker.ConsoleApp", "ReceiptTracker.ConsoleApp\ReceiptTracker.ConsoleApp.csproj", "{F33A95B3-38D5-4BF7-99EC-E85159C43F24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiptTracker.API", "ReceiptTracker.API\ReceiptTracker.API\ReceiptTracker.API.csproj", "{9F4F3BBC-889D-FD93-5794-22632154C89C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiptTracker.Client", "ReceiptTracker.API\ReceiptTracker.Client\ReceiptTracker.Client.csproj", "{9483AB0E-4772-3646-5334-CB3872A8A212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiptTracker.Shared", "ReceiptTracker.API\ReceiptTracker.Shared\ReceiptTracker.Shared.csproj", "{2F6161CA-2405-6492-5A99-C086A02F6FFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{F33A95B3-38D5-4BF7-99EC-E85159C43F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F33A95B3-38D5-4BF7-99EC-E85159C43F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F33A95B3-38D5-4BF7-99EC-E85159C43F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F4F3BBC-889D-FD93-5794-22632154C89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4F3BBC-889D-FD93-5794-22632154C89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4F3BBC-889D-FD93-5794-22632154C89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4F3BBC-889D-FD93-5794-22632154C89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9483AB0E-4772-3646-5334-CB3872A8A212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9483AB0E-4772-3646-5334-CB3872A8A212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9483AB0E-4772-3646-5334-CB3872A8A212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9483AB0E-4772-3646-5334-CB3872A8A212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F6161CA-2405-6492-5A99-C086A02F6FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6161CA-2405-6492-5A99-C086A02F6FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6161CA-2405-6492-5A99-C086A02F6FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6161CA-2405-6492-5A99-C086A02F6FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
