@@ -1,7 +1,36 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Receipt Tracker - Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Receipt Tracker</h1>
+    <p class="lead">A simple application to track your receipts for reimbursement</p>
+    <hr class="my-4">
+    <p>This application allows university employees to submit receipts for reimbursement. You can upload receipts and track your submissions.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/receipts" role="button">View Receipts</a>
+        <a class="btn btn-success btn-lg" href="/receipts/add" role="button">Add New Receipt</a>
+    </p>
+</div>
 
-Welcome to your new app.
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Submit Receipts</h5>
+                <p class="card-text">Easily submit your receipts with date, amount, and description information.</p>
+                <a href="/receipts/add" class="btn btn-primary">Add Receipt</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Track Submissions</h5>
+                <p class="card-text">View all your receipt submissions in one place with detailed information.</p>
+                <a href="/receipts" class="btn btn-primary">View Receipts</a>
+            </div>
+        </div>
+    </div>
+    
+</div>
