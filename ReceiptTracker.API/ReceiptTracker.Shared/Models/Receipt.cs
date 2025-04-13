@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ReceiptTracker.ConsoleApp.DTO;
+using ReceiptTracker.Shared.DTO;
 
-namespace ReceiptTracker.ConsoleApp.Models
+namespace ReceiptTracker.Shared.Models
 {
     public  class Receipt
     {
@@ -36,5 +36,7 @@ namespace ReceiptTracker.ConsoleApp.Models
             d.Description = d.Description;
             FileName = d.FileName;
         }
+
+        public Receipt() { }
     }
 }

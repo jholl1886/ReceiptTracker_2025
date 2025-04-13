@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ReceiptTracker.ConsoleApp.Models;
+using ReceiptTracker.Shared.Models;
 
-namespace ReceiptTracker.ConsoleApp.Services
+namespace ReceiptTracker.Shared.Services
 {
     public class ReceiptServiceProxy
     {
