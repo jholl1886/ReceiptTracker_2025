@@ -16,4 +16,8 @@
     <ProjectReference Include="..\ReceiptTracker.Shared\ReceiptTracker.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>
