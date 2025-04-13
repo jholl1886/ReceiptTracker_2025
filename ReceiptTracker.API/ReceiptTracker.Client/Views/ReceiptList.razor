@@ -3,6 +3,7 @@
 @using ReceiptTracker.Shared.Models
 @inject ReceiptListViewModel ViewModel
 @inject NavigationManager NavigationManager
+@inject HttpClient Http
 @inject IJSRuntime JSRuntime //was missing this for deletion string at the bottom
 
 <PageTitle>Receipts</PageTitle>
@@ -56,7 +57,7 @@ else
                         <td>
                             @if (!string.IsNullOrEmpty(receipt.FileName))
                             {
-                                <a href="api/receipts/download/@receipt.Id" target="_blank">View Receipt</a>
+                                <a href="@($"{Http.BaseAddress}api/receipts/download/{receipt.Id}")" target="_blank">View Receipt</a>
                             }
                             else
                             {

@@ -91,14 +91,22 @@ namespace ReceiptTracker.API.Controllers
                     await file.CopyToAsync(fileStream);
                 }
 
-                // Get file data for database storage
+                // reads file data correctly now
                 using (var memoryStream = new MemoryStream())
                 {
                     await file.CopyToAsync(memoryStream);
                     fileData = memoryStream.ToArray();
-                }
 
-                fileContentType = file.ContentType;
+                    //this whole part saves to file system
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        memoryStream.Position = 0; //resets the position
+                        await memoryStream.CopyToAsync(fileStream);
+                    }
+                }
+                //ensures content type is valid for later
+                fileContentType = !string.IsNullOrWhiteSpace(file.ContentType) ?
+                  file.ContentType : "application/octet-stream";
             }
 
             // Set file information in the receipt DTO
@@ -158,7 +166,15 @@ namespace ReceiptTracker.API.Controllers
                 return NotFound();
             }
 
-            return File(receiptDto.FileData, receiptDto.FileContentType ?? "application/octet-stream", receiptDto.FileName);
+            //return File(receiptDto.FileData, receiptDto.FileContentType ?? "application/octet-stream", receiptDto.FileName); didnt like this, not that good at these yet
+            string contentType = "application/octet-stream"; 
+            if (!string.IsNullOrWhiteSpace(receiptDto.FileContentType) &&
+                receiptDto.FileContentType.IndexOfAny(new[] { '\r', '\n', ':' }) == -1)
+            {
+                contentType = receiptDto.FileContentType;
+            }
+
+            return File(receiptDto.FileData, contentType, receiptDto.FileName);
         }
     }
 }

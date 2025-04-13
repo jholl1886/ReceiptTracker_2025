@@ -16,7 +16,8 @@ namespace ReceiptTracker.API.Data
             modelBuilder.Entity<Receipt>() //id is the primary key
                    .HasKey(x => x.Id);
 
-            modelBuilder.Entity<Receipt>()
+            modelBuilder.Entity<Receipt>() //just went with UUID style Id cause I read about them on reddit
+
                 .Property(x => x.Id)
                 .ValueGeneratedOnAdd()
                 .HasDefaultValueSql("LOWER(HEX(RANDOMBLOB(16)))");

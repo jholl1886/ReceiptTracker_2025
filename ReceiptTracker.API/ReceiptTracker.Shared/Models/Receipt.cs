@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ReceiptTracker.Shared.DTO;
+using System.ComponentModel.DataAnnotations;
 
 namespace ReceiptTracker.Shared.Models
 {
@@ -11,10 +12,17 @@ namespace ReceiptTracker.Shared.Models
     {
         public string Id { get; set; }
 
+        [Required(ErrorMessage = "Date is required")] //Data annotations basically just input validation
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
+        [Required(ErrorMessage = "Amount is required")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Amount must be greater than 0")]
+        [DataType(DataType.Currency)]
         public decimal Amount { get; set; }
 
+        [Required(ErrorMessage = "Description is required")]
+        [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters")]
         public string Description { get; set; }
 
         public string? FileName { get; set; }
