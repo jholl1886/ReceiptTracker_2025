@@ -23,7 +23,7 @@ Receipt Tracker is a simple application designed to help university employees su
 ### Reasons for Choosing This Tech Stack
 
 1. **.NET 8**: I chose the latest version of .NET for improved performance and modern language features, also just most familiar with it from a Full Stack development course I took
-2. **Blazor WebAssembly**: Web app is what was wanted from task and this was 
+2. **Blazor WebAssembly**: Web app is what was wanted for this task and this was a .NET area I hadnt used before and wanted to learn and have created HTML pages before so that transferred to this.
 3. **SQLite**: Lightweight database that requires no installation and is perfect for demonstration purposes, used MS SQL in .NET before but not SQLite in .NET so wanted to learn it. Also if MS SQL was used the connection would be unique to my MS SQL server on my computer making cloning it and using it difficult (just how I personally learned it).
 4. **Entity Framework Core**: Simplifies data access and provides a consistent API for database operations.
 
